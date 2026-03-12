@@ -7,69 +7,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <h1>CodeChum ID Generator</h1>
     </header>
 
-    <main class="container">
-        <section class="form-section">
+    <div class="main-content">
+        <div class="card-container form-card">
             <h2>Create Your ID</h2>
-            <form id="idForm">
-                <div class="input-group">
-                    <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" placeholder="e.g. Codey Chum">
-                    <span class="error-msg" id="nameError"></span>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label>Full Name:</label>
+                    <input type="text" id="fullName" placeholder="Cody Chum">
+                    <small class="error-text" id="nameError"></small>
                 </div>
-
-                <div class="input-group">
-                    <label for="nickname">Nickname:</label>
-                    <input type="text" id="nickname" placeholder="e.g. Codey">
-                    <span class="error-msg" id="nickError"></span>
+                <div class="form-group">
+                    <label>Nickname:</label>
+                    <input type="text" id="nickname" placeholder="Cody">
+                    <small class="error-text" id="nickError"></small>
                 </div>
-
-                <div class="input-group">
-                    <label for="dob">Date of Birth:</label>
+                <div class="form-group">
+                    <label>Date of Birth:</label>
                     <input type="date" id="dob">
-                    <span class="error-msg" id="dobError"></span>
+                    <small class="error-text" id="dobError"></small>
                 </div>
-
-                <div class="input-group">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" placeholder="e.g. Codey Chum Lane">
-                    <span class="error-msg" id="addressError"></span>
+                <div class="form-group">
+                    <label>Address:</label>
+                    <input type="text" id="address" placeholder="Cody Chum Land">
+                    <small class="error-text" id="addressError"></small>
                 </div>
-
-                <div class="input-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="e.g. codey@codechum.com">
-                    <span class="error-msg" id="emailError"></span>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="email" placeholder="codychum@codechum.com">
+                    <small class="error-text" id="emailError"></small>
                 </div>
-
-                <button type="submit" id="submitBtn">GENERATE</button>
+                <button type="submit" class="btn-submit">Sign Up</button>
             </form>
-        </section>
+        </div>
 
-        <section class="display-section">
-            <div class="id-card" id="idCard">
-                <div class="card-header">
-                    <img src="https://via.placeholder.com/30" alt="logo" class="logo">
+        <div class="preview-section">
+            <div class="id-badge" id="idBadge">
+                <div class="badge-header">
+                    <div class="logo-box"></div>
                     <span>CodeChum University</span>
                 </div>
-                <div class="card-body">
-                    <div class="photo-placeholder">
-                        <img src="https://via.placeholder.com/80" alt="User Photo">
+                <div class="badge-body">
+                    <div class="avatar-placeholder">
+                        <div class="head"></div>
+                        <div class="torso"></div>
                     </div>
-                    <div class="info">
-                        <p><strong>Name:</strong> <span id="displayName">---</span></p>
-                        <p><strong>Nickname:</strong> <span id="displayNick">---</span></p>
-                        <p><strong>DOB:</strong> <span id="displayDob">---</span></p>
-                        <p><strong>Address:</strong> <span id="displayAddress">---</span></p>
-                        <p><strong>Email:</strong> <span id="displayEmail">---</span></p>
+                    <div class="badge-info">
+                        <p>ID: <span class="id-number">####</span></p>
+                        <p>Name: <span id="resName">N/A</span></p>
+                        <p>Nickname: <span id="resNick">N/A</span></p>
+                        <p>Date of Birth: <span id="resDob">N/A</span></p>
+                        <p>Address: <span id="resAddr">N/A</span></p>
+                        <p>Email: <span id="resEmail">N/A</span></p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <script src="javascript.js"></script>
 </body>
