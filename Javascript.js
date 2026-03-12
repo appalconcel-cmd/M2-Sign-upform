@@ -1,52 +1,53 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('idForm');
+    const form = document.getElementById('signupForm');
     
-    // Elements for real-time update and display
-    const displayFields = {
-        fullName: document.getElementById('displayName'),
-        nickname: document.getElementById('displayNick'),
-        dob: document.getElementById('displayDob'),
-        address: document.getElementById('displayAddress'),
-        email: document.getElementById('displayEmail')
+    // Mapping inputs to their respective display spans
+    const inputs = {
+        fullName: document.getElementById('fullName'),
+        nickname: document.getElementById('nickname'),
+        dob: document.getElementById('dob'),
+        address: document.getElementById('address'),
+        email: document.getElementById('email')
     };
 
-    // Event Handling for Form Submission
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); // JavaScript Event Object usage
+    const displays = {
+        resName: document.getElementById('resName'),
+        resNick: document.getElementById('resNick'),
+        resDob: document.getElementById('resDob'),
+        resAddr: document.getElementById('resAddr'),
+        resEmail: document.getElementById('resEmail')
+    };
+
+    // Submit Event Handling
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevents page refresh
         
-        if (validateForm()) {
-            updateIDCard();
-            alert("ID Successfully Generated!");
-        }
-    });
-
-    function validateForm() {
         let isValid = true;
-        const inputs = form.querySelectorAll('input');
 
-        inputs.forEach(input => {
-            const errorSpan = document.getElementById(`${input.id}Error`);
+        // Form Validation Logic
+        Object.keys(inputs).forEach(key => {
+            const field = inputs[key];
+            const errorElement = document.getElementById(key + 'Error');
             
-            // Simple validation: check if empty
-            if (input.value.trim() === "") {
-                input.classList.add('invalid'); // CSS Class Manipulation
-                errorSpan.textContent = "This field is required."; // Displaying Error Messages
+            if (field.value.trim() === "") {
+                field.style.borderColor = "red";
+                errorElement.textContent = "Field required";
                 isValid = false;
             } else {
-                input.classList.remove('invalid');
-                errorSpan.textContent = "";
+                field.style.borderColor = "#ccc";
+                errorElement.textContent = "";
             }
         });
 
-        return isValid;
-    }
-
-    function updateIDCard() {
-        // Accessing and Modifying Element Properties
-        displayFields.fullName.textContent = document.getElementById('fullName').value;
-        displayFields.nickname.textContent = document.getElementById('nickname').value;
-        displayFields.dob.textContent = document.getElementById('dob').value;
-        displayFields.address.textContent = document.getElementById('address').value;
-        displayFields.email.textContent = document.getElementById('email').value;
-    }
+        if (isValid) {
+            // Updating DOM Content
+            displays.resName.textContent = inputs.fullName.value;
+            displays.resNick.textContent = inputs.nickname.value;
+            displays.resDob.textContent = inputs.dob.value;
+            displays.resAddr.textContent = inputs.address.value;
+            displays.resEmail.textContent = inputs.email.value;
+            
+            alert("ID Card Generated Successfully!");
+        }
+    });
 });
