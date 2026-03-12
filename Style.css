@@ -1,46 +1,47 @@
-:root {
-    --primary-blue: #007bff;
-    --error-red: #ff4d4d;
-    --bg-light: #f4f7f6;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--bg-light);
+    background-color: #e9eff5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
 }
 
-header {
-    background-color: var(--primary-blue);
+.main-header {
+    background-color: #007bff;
     color: white;
-    padding: 1rem;
     text-align: center;
+    padding: 1.5rem;
+    font-size: 1.2rem;
 }
 
-.container {
+.main-content {
     display: flex;
-    justify-content: space-around;
-    padding: 2rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 40px;
 }
 
-.form-section, .display-section {
+.card-container {
     background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 400px;
-    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    width: 450px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.input-group {
-    margin-bottom: 15px;
+.card-container h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 12px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
     font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
 }
 
 input {
@@ -51,58 +52,73 @@ input {
     box-sizing: border-box;
 }
 
-input.invalid {
-    border-color: var(--error-red);
-}
-
-.error-msg {
-    color: var(--error-red);
-    font-size: 0.8rem;
-    display: block;
-    margin-top: 4px;
-}
-
-button {
+.btn-submit {
     width: 100%;
     padding: 10px;
-    background-color: var(--primary-blue);
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    margin-top: 10px;
 }
 
-/* ID Card Styling */
-.id-card {
-    border: 2px dashed #007bff;
-    border-radius: 10px;
-    padding: 15px;
+.error-text {
+    color: red;
+    font-size: 0.75rem;
+}
+
+/* ID Badge Styles */
+.id-badge {
+    width: 300px;
+    border: 2px dashed #000;
+    border-radius: 12px;
+    overflow: hidden;
     background: white;
 }
 
-.card-header {
-    background-color: var(--primary-blue);
+.badge-header {
+    background-color: #007bff;
     color: white;
-    padding: 10px;
+    padding: 8px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    border-radius: 5px 5px 0 0;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
-.card-body {
+.logo-box {
+    width: 25px;
+    height: 25px;
+    background: #ccc;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.badge-body {
     display: flex;
-    padding-top: 15px;
+    padding: 15px;
     gap: 15px;
 }
 
-.photo-placeholder img {
-    background: #ddd;
-    border-radius: 5px;
+.avatar-placeholder {
+    width: 60px;
+    height: 70px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.info p {
-    margin: 5px 0;
-    font-size: 0.9rem;
+.badge-info p {
+    margin: 2px 0;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.badge-info span {
+    color: #007bff;
 }
