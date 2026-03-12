@@ -1,0 +1,108 @@
+:root {
+    --primary-blue: #007bff;
+    --error-red: #ff4d4d;
+    --bg-light: #f4f7f6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-light);
+    margin: 0;
+}
+
+header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.form-section, .display-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input.invalid {
+    border-color: var(--error-red);
+}
+
+.error-msg {
+    color: var(--error-red);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ID Card Styling */
+.id-card {
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    padding: 15px;
+    background: white;
+}
+
+.card-header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.card-body {
+    display: flex;
+    padding-top: 15px;
+    gap: 15px;
+}
+
+.photo-placeholder img {
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
