@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeChum ID Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CodeChum ID Generator</h1>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Create Your ID</h2>
+            <form id="idForm">
+                <div class="input-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" placeholder="e.g. Codey Chum">
+                    <span class="error-msg" id="nameError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="nickname">Nickname:</label>
+                    <input type="text" id="nickname" placeholder="e.g. Codey">
+                    <span class="error-msg" id="nickError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob">
+                    <span class="error-msg" id="dobError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" placeholder="e.g. Codey Chum Lane">
+                    <span class="error-msg" id="addressError"></span>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="e.g. codey@codechum.com">
+                    <span class="error-msg" id="emailError"></span>
+                </div>
+
+                <button type="submit" id="submitBtn">GENERATE</button>
+            </form>
+        </section>
+
+        <section class="display-section">
+            <div class="id-card" id="idCard">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/30" alt="logo" class="logo">
+                    <span>CodeChum University</span>
+                </div>
+                <div class="card-body">
+                    <div class="photo-placeholder">
+                        <img src="https://via.placeholder.com/80" alt="User Photo">
+                    </div>
+                    <div class="info">
+                        <p><strong>Name:</strong> <span id="displayName">---</span></p>
+                        <p><strong>Nickname:</strong> <span id="displayNick">---</span></p>
+                        <p><strong>DOB:</strong> <span id="displayDob">---</span></p>
+                        <p><strong>Address:</strong> <span id="displayAddress">---</span></p>
+                        <p><strong>Email:</strong> <span id="displayEmail">---</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
